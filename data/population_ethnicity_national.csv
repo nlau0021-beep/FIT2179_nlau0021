@@ -1,0 +1,211 @@
+year,Ethnicity,stack_order,pop_millions
+1991,Malay,1,9.259
+1991,Other Bumiputera,2,1.498
+1991,Chinese,3,5.176
+1991,Indian,4,1.543
+1991,Other citizen,5,0.268
+1991,Non-citizen,6,0.803
+1992,Malay,1,9.518
+1992,Other Bumiputera,2,1.561
+1992,Chinese,3,5.268
+1992,Indian,4,1.577
+1992,Other citizen,5,0.281
+1992,Non-citizen,6,0.862
+1993,Malay,1,9.785
+1993,Other Bumiputera,2,1.625
+1993,Chinese,3,5.362
+1993,Indian,4,1.612
+1993,Other citizen,5,0.291
+1993,Non-citizen,6,0.926
+1994,Malay,1,10.057
+1994,Other Bumiputera,2,1.69
+1994,Chinese,3,5.458
+1994,Indian,4,1.647
+1994,Other citizen,5,0.299
+1994,Non-citizen,6,0.993
+1995,Malay,1,10.333
+1995,Other Bumiputera,2,1.751
+1995,Chinese,3,5.552
+1995,Indian,4,1.681
+1995,Other citizen,5,0.307
+1995,Non-citizen,6,1.058
+1996,Malay,1,10.611
+1996,Other Bumiputera,2,1.812
+1996,Chinese,3,5.646
+1996,Indian,4,1.714
+1996,Other citizen,5,0.315
+1996,Non-citizen,6,1.124
+1997,Malay,1,10.895
+1997,Other Bumiputera,2,1.871
+1997,Chinese,3,5.74
+1997,Indian,4,1.748
+1997,Other citizen,5,0.323
+1997,Non-citizen,6,1.192
+1998,Malay,1,11.189
+1998,Other Bumiputera,2,1.93
+1998,Chinese,3,5.837
+1998,Indian,4,1.784
+1998,Other citizen,5,0.332
+1998,Non-citizen,6,1.262
+1999,Malay,1,11.486
+1999,Other Bumiputera,2,1.987
+1999,Chinese,3,5.938
+1999,Indian,4,1.821
+1999,Other citizen,5,0.342
+1999,Non-citizen,6,1.335
+2000,Malay,1,11.786
+2000,Other Bumiputera,2,2.044
+2000,Chinese,3,6.042
+2000,Indian,4,1.859
+2000,Other citizen,5,0.351
+2000,Non-citizen,6,1.413
+2001,Malay,1,12.041
+2001,Other Bumiputera,2,2.1
+2001,Chinese,3,6.137
+2001,Indian,4,1.889
+2001,Other citizen,5,0.355
+2001,Non-citizen,6,1.508
+2002,Malay,1,12.291
+2002,Other Bumiputera,2,2.154
+2002,Chinese,3,6.22
+2002,Indian,4,1.918
+2002,Other citizen,5,0.359
+2002,Non-citizen,6,1.601
+2003,Malay,1,12.532
+2003,Other Bumiputera,2,2.207
+2003,Chinese,3,6.301
+2003,Indian,4,1.945
+2003,Other citizen,5,0.363
+2003,Non-citizen,6,1.69
+2004,Malay,1,12.778
+2004,Other Bumiputera,2,2.263
+2004,Chinese,3,6.38
+2004,Indian,4,1.972
+2004,Other citizen,5,0.367
+2004,Non-citizen,6,1.782
+2005,Malay,1,13.024
+2005,Other Bumiputera,2,2.321
+2005,Chinese,3,6.457
+2005,Indian,4,1.998
+2005,Other citizen,5,0.371
+2005,Non-citizen,6,1.874
+2006,Malay,1,13.27
+2006,Other Bumiputera,2,2.382
+2006,Chinese,3,6.534
+2006,Indian,4,2.023
+2006,Other citizen,5,0.376
+2006,Non-citizen,6,1.965
+2007,Malay,1,13.522
+2007,Other Bumiputera,2,2.445
+2007,Chinese,3,6.609
+2007,Indian,4,2.047
+2007,Other citizen,5,0.38
+2007,Non-citizen,6,2.055
+2008,Malay,1,13.772
+2008,Other Bumiputera,2,2.51
+2008,Chinese,3,6.685
+2008,Indian,4,2.071
+2008,Other citizen,5,0.385
+2008,Non-citizen,6,2.145
+2009,Malay,1,14.032
+2009,Other Bumiputera,2,2.578
+2009,Chinese,3,6.76
+2009,Indian,4,2.094
+2009,Other citizen,5,0.386
+2009,Non-citizen,6,2.233
+2010,Malay,1,14.322
+2010,Other Bumiputera,2,3.355
+2010,Chinese,3,6.43
+2010,Indian,4,1.925
+2010,Other citizen,5,0.232
+2010,Non-citizen,6,2.325
+2011,Malay,1,14.551
+2011,Other Bumiputera,2,3.413
+2011,Chinese,3,6.471
+2011,Indian,4,1.94
+2011,Other citizen,5,0.242
+2011,Non-citizen,6,2.445
+2012,Malay,1,14.78
+2012,Other Bumiputera,2,3.47
+2012,Chinese,3,6.511
+2012,Indian,4,1.952
+2012,Other citizen,5,0.249
+2012,Non-citizen,6,2.548
+2013,Malay,1,15.023
+2013,Other Bumiputera,2,3.526
+2013,Chinese,3,6.555
+2013,Indian,4,1.965
+2013,Other citizen,5,0.257
+2013,Non-citizen,6,2.888
+2014,Malay,1,15.285
+2014,Other Bumiputera,2,3.58
+2014,Chinese,3,6.586
+2014,Indian,4,1.978
+2014,Other citizen,5,0.266
+2014,Non-citizen,6,3.012
+2015,Malay,1,15.55
+2015,Other Bumiputera,2,3.632
+2015,Chinese,3,6.619
+2015,Indian,4,1.986
+2015,Other citizen,5,0.272
+2015,Non-citizen,6,3.126
+2016,Malay,1,15.797
+2016,Other Bumiputera,2,3.688
+2016,Chinese,3,6.646
+2016,Indian,4,1.992
+2016,Other citizen,5,0.281
+2016,Non-citizen,6,3.23
+2017,Malay,1,16.046
+2017,Other Bumiputera,2,3.736
+2017,Chinese,3,6.665
+2017,Indian,4,2.001
+2017,Other citizen,5,0.288
+2017,Non-citizen,6,3.288
+2018,Malay,1,16.293
+2018,Other Bumiputera,2,3.783
+2018,Chinese,3,6.682
+2018,Indian,4,2.008
+2018,Other citizen,5,0.294
+2018,Non-citizen,6,3.323
+2019,Malay,1,16.535
+2019,Other Bumiputera,2,3.834
+2019,Chinese,3,6.699
+2019,Indian,4,2.015
+2019,Other citizen,5,0.3
+2019,Non-citizen,6,3.14
+2020,Malay,1,16.913
+2020,Other Bumiputera,2,3.737
+2020,Chinese,3,6.893
+2020,Indian,4,1.999
+2020,Other citizen,5,0.216
+2020,Non-citizen,6,2.691
+2021,Malay,1,17.248
+2021,Other Bumiputera,2,3.654
+2021,Chinese,3,6.892
+2021,Indian,4,2.003
+2021,Other citizen,5,0.22
+2021,Non-citizen,6,2.56
+2022,Malay,1,17.422
+2022,Other Bumiputera,2,3.68
+2022,Chinese,3,6.874
+2022,Indian,4,2.0
+2022,Other citizen,5,0.223
+2022,Non-citizen,6,2.5
+2023,Malay,1,17.615
+2023,Other Bumiputera,2,3.726
+2023,Chinese,3,6.866
+2023,Indian,4,2.003
+2023,Other citizen,5,0.227
+2023,Non-citizen,6,2.965
+2024,Malay,1,17.813
+2024,Other Bumiputera,2,3.749
+2024,Chinese,3,6.857
+2024,Indian,4,2.005
+2024,Other citizen,5,0.231
+2024,Non-citizen,6,3.397
+2025,Malay,1,17.981
+2025,Other Bumiputera,2,3.78
+2025,Chinese,3,6.85
+2025,Indian,4,2.006
+2025,Other citizen,5,0.234
+2025,Non-citizen,6,3.381
