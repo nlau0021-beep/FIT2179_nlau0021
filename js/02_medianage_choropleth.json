@@ -42,7 +42,7 @@
           "type": "quantitative",
           "scale": {
             "scheme": "oranges",
-            "domain": [30, 40],
+            "domain": [25, 35],
             "clamp": true
           },
           "legend": {
