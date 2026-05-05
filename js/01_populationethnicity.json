@@ -1,0 +1,102 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Malaysia has nearly doubled in size in a generation",
+    "subtitle": "Population by ethnicity, 1991–2025 (millions)",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#5F5E5A"
+  },
+  "width": "container",
+  "height": 360,
+  "background": "transparent",
+  "data": {
+    "url": "data/population_ethnicity_national.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "axis": {"format": "d", "title": null, "tickCount": 8, "grid": false},
+      "scale": {"domain": [1991, 2025], "nice": false}
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "area", "interpolate": "monotone"},
+      "encoding": {
+        "y": {
+          "field": "pop_millions",
+          "type": "quantitative",
+          "stack": "zero",
+          "title": "Population (millions)",
+          "axis": {"grid": true, "gridDash": [2, 2], "domain": false}
+        },
+        "color": {
+          "field": "Ethnicity",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Malay", "Other Bumiputera", "Chinese", "Indian", "Other citizen", "Non-citizen"],
+            "range": ["#185FA5", "#85B7EB", "#0F6E56", "#BA7517", "#888780", "#D3D1C7"]
+          },
+          "legend": {"title": null, "orient": "top-right"}
+        },
+        "order": {"field": "stack_order", "type": "ordinal"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "aggregate": [{"op": "sum", "field": "pop_millions", "as": "total_millions"}],
+          "groupby": ["year"]
+        }
+      ],
+      "mark": {"type": "rule", "color": "#5F5E5A", "strokeDash": [3, 3]},
+      "encoding": {
+        "x": {"field": "year", "type": "quantitative"},
+        "tooltip": [
+          {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+          {"field": "total_millions", "type": "quantitative", "title": "Total (millions)", "format": ".2f"}
+        ],
+        "opacity": {
+          "condition": {"param": "hover", "value": 0.6},
+          "value": 0
+        }
+      },
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": ["year"],
+            "nearest": true,
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ]
+    },
+    {
+      "data": {"values": [{"year": 2025, "label": "≈ 35 million"}]},
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "fontSize": 12,
+        "fontWeight": 500,
+        "color": "#2C2C2A",
+        "dx": -6,
+        "dy": -6
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "quantitative"},
+        "y": {"value": 30},
+        "text": {"field": "label"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "font": "Inter, system-ui, sans-serif"
+  }
+}

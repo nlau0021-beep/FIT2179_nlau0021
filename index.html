@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Living Longer, Ageing Faster — Malaysia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>Living Longer, Ageing Faster</h1>
+  <p class="standfirst">Malaysia's quiet demographic transition and what it means for our health.</p>
+</header>
+
+<main>
+  <section>
+    <h2>The hook: we're living longer than ever</h2>
+    <p>
+      In a generation, Malaysia has nearly doubled in size — from around 18 million people in 1991
+      to 35 million today. But the story isn't just about growth. It's about who we are, how long we live,
+      and the quiet pressure that longer lives place on a health system built for a younger country.
+    </p>
+    <div id="chart-population-ethnicity" class="chart-container"></div>
+  </section>
+</main>
+
+<footer class="page-footer">
+  <p>Data: <a href="https://open.dosm.gov.my/data-catalogue/population_state">DOSM Population Table: States</a> (CC BY 4.0).
+     Built with Vega-Lite and Pure.css. Submission for FIT2179, Monash University.</p>
+</footer>
+
+<script>
+  const embedOpts = { actions: false, renderer: 'svg' };
+
+  vegaEmbed('#chart-population-ethnicity', 'js/01_populationethnicity.json')
+    .catch(console.error);
+</script>
+
+</body>
+</html>
