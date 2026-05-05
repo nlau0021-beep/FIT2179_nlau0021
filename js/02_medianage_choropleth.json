@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Where Malaysia is ageing fastest",
+    "subtitle": "Median age by state, 2025",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#5F5E5A"
+  },
+  "width": "container",
+  "height": 460,
+  "background": "transparent",
+  "projection": {"type": "identity", "reflectY": true},
+
+  "data": {
+    "url": "data/malaysia_states.geojson",
+    "format": {"type": "json", "property": "features"}
+  },
+
+  "transform": [
+    {
+      "lookup": "properties.shapeName",
+      "from": {
+        "data": {"url": "data/median_age_by_state.csv"},
+        "key": "state",
+        "fields": ["median_age", "population_k"]
+      }
+    }
+  ],
+
+  "layer": [
+    {
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.7
+      },
+      "encoding": {
+        "color": {
+          "field": "median_age",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "oranges",
+            "domain": [30, 40],
+            "clamp": true
+          },
+          "legend": {
+            "title": "Median age (years)",
+            "orient": "bottom-right",
+            "gradientLength": 180
+          }
+        },
+        "tooltip": [
+          {"field": "properties.shapeName", "type": "nominal", "title": "State"},
+          {"field": "median_age", "type": "quantitative", "title": "Median age", "format": ".1f"},
+          {"field": "population_k", "type": "quantitative", "title": "Population", "format": ",.0f"}
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "font": "Inter, system-ui, sans-serif"
+  }
+}

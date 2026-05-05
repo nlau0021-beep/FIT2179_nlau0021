@@ -27,17 +27,27 @@
     </p>
     <div id="chart-population-ethnicity" class="chart-container"></div>
   </section>
+
+  <section>
+    <h2>Where the ageing is happening</h2>
+    <p>The pressure of an ageing population isn't evenly spread...</p>
+    <div id="chart-median-age" class="chart-container"></div>
+</section>
 </main>
 
+
+
 <footer class="page-footer">
-  <p>Data: <a href="https://open.dosm.gov.my/data-catalogue/population_state">DOSM Population Table: States</a> (CC BY 4.0). 
-    Built with Vega-Lite and Pure.css.</p>
+  <p>Data: <a href="https://open.dosm.gov.my/data-catalogue/population_state">DOSM Population Table: States</a> (CC BY 4.0).</p>
 </footer>
 
 <script>
   const embedOpts = { actions: false, renderer: 'svg' };
 
   vegaEmbed('#chart-population-ethnicity', 'js/01_populationethnicity.json')
+    .catch(console.error);
+
+  vegaEmbed('#chart-median-age', 'js/02_medianage_choropleth.json', { actions: false, renderer: 'svg' })
     .catch(console.error);
 </script>
 
