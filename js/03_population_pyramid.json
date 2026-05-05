@@ -1,0 +1,100 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "From pyramid to pillar",
+    "subtitle": "Malaysia's population by age and sex, 2025 (thousands)",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#5F5E5A"
+  },
+  "width": "container",
+  "height": 460,
+  "background": "transparent",
+
+  "data": {
+    "url": "data/population_pyramid_national.csv"
+  },
+
+  "encoding": {
+    "y": {
+      "field": "age",
+      "type": "ordinal",
+      "sort": {"field": "age_order", "order": "descending"},
+      "axis": {"title": "Age group", "labelFontSize": 11, "ticks": false, "domain": false},
+      "scale": {"paddingInner": 0.15}
+    },
+    "x": {
+      "field": "signed_pop",
+      "type": "quantitative",
+      "axis": {
+        "title": "Population (thousands)",
+        "labelExpr": "abs(datum.value)",
+        "grid": true,
+        "gridDash": [2, 2],
+        "domain": false
+      }
+    },
+    "color": {
+      "field": "sex",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Male", "Female"],
+        "range": ["#185FA5", "#D4537E"]
+      },
+      "legend": {
+        "title": null,
+        "orient": "bottom"
+      }
+    },
+    "tooltip": [
+      {"field": "age",        "type": "ordinal",      "title": "Age group"},
+      {"field": "sex",        "type": "nominal",      "title": "Sex"},
+      {"field": "population", "type": "quantitative", "title": "Population (thousands)", "format": ",.1f"}
+    ]
+  },
+
+  "layer": [
+    {
+      "mark": {"type": "bar", "cornerRadius": 1}
+    },
+    {
+      "data": {"values": [{"x": 0}]},
+      "mark": {"type": "rule", "color": "#2C2C2A", "strokeWidth": 0.8},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": null,
+        "color": null,
+        "tooltip": null
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"label": "← Male",   "x": -1500, "age": "85+"},
+          {"label": "Female →", "x":  1500, "age": "85+"}
+        ]
+      },    
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 500,
+        "color": "#5F5E5A",
+        "dy": -22
+      },
+      "encoding": {
+        "x":   {"field": "x",     "type": "quantitative"},
+        "y":   {"field": "age",   "type": "ordinal",
+                "sort": {"field": "age_order", "order": "descending"}},
+        "text": {"field": "label"},
+        "color": null,
+        "tooltip": null
+      }
+    }
+  ],
+
+  "config": {
+    "view": {"stroke": null},
+    "font": "Inter, system-ui, sans-serif"
+  }
+}

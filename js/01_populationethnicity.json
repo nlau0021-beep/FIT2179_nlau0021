@@ -11,6 +11,7 @@
   "width": "container",
   "height": 360,
   "background": "transparent",
+  
   "data": {
     "url": "data/population_ethnicity_national.csv"
   },
