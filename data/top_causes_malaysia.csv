@@ -1,0 +1,11 @@
+rank,cause,category,rate,year
+1,Ischaemic heart disease,Cardiovascular,120.54,2021
+2,COVID-19,Communicable,89.87,2021
+3,Stroke,Cardiovascular,74.41,2021
+4,Lower respiratory infections,Communicable,56.55,2021
+5,Kidney diseases,Other NCD,24.51,2021
+6,Chronic obstructive pulmonary disease,Respiratory NCD,20.45,2021
+7,Diabetes mellitus,Other NCD,16.9,2021
+8,Cirrhosis of the liver,Other NCD,16.15,2021
+9,Alzheimer disease and other dementias,Other NCD,15.27,2021
+10,Road injury,Injury,13.74,2021
