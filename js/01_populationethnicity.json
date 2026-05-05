@@ -40,7 +40,7 @@
             "domain": ["Malay", "Other Bumiputera", "Chinese", "Indian", "Other citizen", "Non-citizen"],
             "range": ["#185FA5", "#85B7EB", "#0F6E56", "#BA7517", "#888780", "#D3D1C7"]
           },
-          "legend": {"title": null, "orient": "top-right"}
+          "legend": {"title": null, "orient": "bottom"}
         },
         "order": {"field": "stack_order", "type": "ordinal"}
       }
