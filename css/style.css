@@ -59,6 +59,7 @@ a { color: #185FA5; }
 /* ---- Charts ---- */
 .chart-container {
   width: 100%;
+  min-height: 400px;
   margin: 2rem 0;
 }
 .vega-embed {
