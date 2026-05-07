@@ -1,0 +1,89 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Heart disease, COVID, stroke — what's killing Malaysians",
+    "subtitle": "Top 10 causes of death, deaths per 100,000 population, Malaysia 2021",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#5F5E5A"
+  },
+  "width": "container",
+  "height": 380,
+  "background": "transparent",
+
+  "data": {
+    "url": "data/top_causes_malaysia.csv"
+  },
+
+  "encoding": {
+    "y": {
+      "field": "cause",
+      "type": "nominal",
+      "sort": {"field": "rank", "order": "ascending"},
+      "axis": {
+        "title": null,
+        "labelLimit": 240,
+        "labelFontSize": 11,
+        "ticks": false,
+        "domain": false
+      }
+    },
+    "x": {
+      "field": "rate",
+      "type": "quantitative",
+      "axis": {
+        "title": "Deaths per 100,000",
+        "grid": true,
+        "gridDash": [2, 2],
+        "domain": false
+      }
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {"type": "bar", "cornerRadiusEnd": 2, "height": 18},
+      "encoding": {
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "scale": {
+            "domain":  ["Cardiovascular", "Other NCD", "Respiratory NCD", "Cancer", "Communicable", "Injury"],
+            "range":   ["#A32D2D",        "#D4537E",   "#BA7517",         "#854F0B", "#5F8FAB",     "#888780"]
+          },
+          "legend": {
+            "title": null,
+            "orient": "bottom",
+            "columns": 3,
+            "labelFontSize": 11
+          }
+        },
+        "tooltip": [
+          {"field": "rank",     "type": "quantitative", "title": "Rank"},
+          {"field": "cause",    "type": "nominal",      "title": "Cause"},
+          {"field": "category", "type": "nominal",      "title": "Category"},
+          {"field": "rate",     "type": "quantitative", "title": "Deaths / 100k", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 4,
+        "fontSize": 11,
+        "color": "#2C2C2A"
+      },
+      "encoding": {
+        "text": {"field": "rate", "type": "quantitative", "format": ".1f"}
+      }
+    }
+  ],
+
+  "config": {
+    "view": {"stroke": null},
+    "font": "Inter, system-ui, sans-serif"
+  }
+}
