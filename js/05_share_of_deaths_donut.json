@@ -1,0 +1,105 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "65% of deaths are now from chronic disease",
+    "subtitle": "Share of total deaths by broad cause, Malaysia 2021",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#5F5E5A"
+  },
+  "width": "container",
+  "height": 360,
+  "background": "transparent",
+
+  "data": {
+    "url": "data/who_share_of_deaths_by_causes.csv"
+  },
+
+  "encoding": {
+    "theta": {
+      "field": "percent",
+      "type": "quantitative",
+      "stack": true
+    },
+    "color": {
+      "field": "broad_cause",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Noncommunicable diseases",
+          "Communicable, maternal, perinatal & nutritional",
+          "Injuries",
+          "COVID-19 related"
+        ],
+        "range":  ["#A32D2D", "#5F8FAB", "#888780", "#D4537E"]
+      },
+      "legend": {
+        "title": null,
+        "orient": "right",
+        "labelFontSize": 11,
+        "labelLimit": 240
+      }
+    },
+    "order": {
+      "field": "percent",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 80,
+        "outerRadius": 130,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "tooltip": [
+          {"field": "broad_cause", "type": "nominal",      "title": "Cause"},
+          {"field": "percent",     "type": "quantitative", "title": "Share of deaths", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "radius": 155,
+        "fontSize": 11,
+        "fontWeight": 500
+      },
+      "encoding": {
+        "text": {"field": "percent", "type": "quantitative", "format": ".1f"},
+        "color": {"value": "#2C2C2A"}
+      }
+    },
+    {
+      "data": {"values": [{"big": "65%", "small": "of all deaths in Malaysia are from NCDs"}]},
+      "mark": {"type": "text", "fontSize": 32, "fontWeight": 600, "color": "#A32D2D", "dy": -8},
+      "encoding": {
+        "text": {"field": "big"},
+        "theta": null,
+        "color": null,
+        "order": null
+      }
+    },
+    {
+      "data": {"values": [{"big": "65%", "small": "of all deaths from chronic disease"}]},
+      "mark": {"type": "text", "fontSize": 11, "color": "#5F5E5A", "dy": 18},
+      "encoding": {
+        "text": {"field": "small"},
+        "theta": null,
+        "color": null,
+        "order": null
+      }
+    }
+  ],
+
+  "config": {
+    "view": {"stroke": null},
+    "font": "Inter, system-ui, sans-serif"
+  }
+}

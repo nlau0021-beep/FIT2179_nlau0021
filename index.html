@@ -48,10 +48,9 @@
   Malaysia's top ten causes of death are non-communicable — chronic illnesses
   that build up over decades of life.</p>
   <div id="chart-top-causes" class="chart-container"></div>
+  <div id="chart-share-deaths" class="chart-container"></div>
 </section>
 </main>
-
-
 
 <footer class="page-footer">
   <p>Data: <a href="https://open.dosm.gov.my/data-catalogue/population_state">DOSM Population Table: States</a> (CC BY 4.0).</p>
@@ -69,6 +68,9 @@
   .catch(console.error);
 
   vegaEmbed('#chart-top-causes', 'js/04_top_causes.json', { actions: false, renderer: 'svg' })
+     .catch(console.error);
+
+  vegaEmbed('#chart-share-deaths', 'js/05_share_of_deaths_donut.json', { actions: false, renderer: 'svg' })
      .catch(console.error);
 </script>
 
