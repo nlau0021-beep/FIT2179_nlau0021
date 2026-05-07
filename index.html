@@ -50,6 +50,15 @@
   <div id="chart-top-causes" class="chart-container"></div>
   <div id="chart-share-deaths" class="chart-container"></div>
 </section>
+
+<section>
+     <h2>How does Malaysia compare regionally?</h2>
+     <p>The probability that a 30-year-old will die from a major chronic disease before
+     age 70 is a single, powerful measure of how an ageing population fares.
+     Malaysia sits in the middle of the ASEAN pack — making slower progress than
+     Singapore or Thailand, but better than Indonesia or the Philippines.</p>
+     <div id="chart-ncd-asean" class="chart-container"></div>
+   </section>
 </main>
 
 <footer class="page-footer">
@@ -72,6 +81,9 @@
 
   vegaEmbed('#chart-share-deaths', 'js/05_share_of_deaths_donut.json', { actions: false, renderer: 'svg' })
      .catch(console.error);
+  
+  vegaEmbed('#chart-ncd-asean', 'js/06_ncd_asean.json', { actions: false, renderer: 'svg' })
+      .catch(console.error);
 </script>
 
 </body>

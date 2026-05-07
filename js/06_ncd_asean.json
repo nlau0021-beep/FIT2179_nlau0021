@@ -1,0 +1,98 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "1 in 5 Malaysians aged 30 will die from a major NCD before 70",
+    "subtitle": "Probability of premature death from cardiovascular disease, cancer, diabetes or chronic respiratory disease (ages 30–70), 2000–2021",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#5F5E5A"
+  },
+  "width": "container",
+  "height": 380,
+  "background": "transparent",
+
+  "data": {
+    "url": "data/ncd_premature_asean.csv"
+  },
+
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "axis": {
+        "format": "d",
+        "title": null,
+        "tickCount": 7,
+        "grid": false,
+        "domain": false
+      },
+      "scale": {"domain": [2000, 2024], "nice": false}
+    },
+    "y": {
+      "field": "rate",
+      "type": "quantitative",
+      "axis": {
+        "title": "Probability of premature NCD death (%)",
+        "grid": true,
+        "gridDash": [2, 2],
+        "domain": false,
+        "format": ".0f"
+      },
+      "scale": {"domain": [5, 35]}
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {"type": "line", "interpolate": "monotone"},
+      "encoding": {
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Malaysia", "Indonesia", "Philippines", "Singapore", "Thailand", "Vietnam"],
+            "range":  ["#A32D2D",  "#888780",   "#888780",     "#888780",   "#888780",  "#888780"]
+          },
+          "legend": null
+        },
+        "size": {
+          "condition": {"test": "datum.country == 'Malaysia'", "value": 3.5},
+          "value": 1.5
+        },
+        "opacity": {
+          "condition": {"test": "datum.country == 'Malaysia'", "value": 1.0},
+          "value": 0.45
+        },
+        "tooltip": [
+          {"field": "country", "type": "nominal",      "title": "Country"},
+          {"field": "year",    "type": "quantitative", "title": "Year",    "format": "d"},
+          {"field": "rate",    "type": "quantitative", "title": "Rate (%)", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.year == 2021"}],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 6,
+        "fontSize": 11,
+        "fontWeight": 500
+      },
+      "encoding": {
+        "text":  {"field": "country"},
+        "color": {
+          "condition": {"test": "datum.country == 'Malaysia'", "value": "#A32D2D"},
+          "value": "#5F5E5A"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "view": {"stroke": null},
+    "font": "Inter, system-ui, sans-serif"
+  }
+}
