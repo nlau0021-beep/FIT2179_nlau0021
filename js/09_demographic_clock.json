@@ -1,0 +1,150 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Malaysia's demographic clock",
+    "subtitle": "Each state plotted by its age profile and growth rate. Bigger dots = bigger populations. Darker dots = greater share aged 65+.",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#5F5E5A"
+  },
+  "width": "container",
+  "height": 460,
+  "background": "transparent",
+  "padding": {"left": 10, "right": 10, "top": 10, "bottom": 30},
+
+  "data": {
+    "url": "data/demographic_clock.csv"
+  },
+
+  "encoding": {
+    "x": {
+      "field": "median_age",
+      "type": "quantitative",
+      "scale": {"domain": [25, 38], "nice": false},
+      "axis": {
+        "title": "Median age (years) — older →",
+        "grid": true,
+        "gridDash": [2, 2],
+        "domain": false
+      }
+    },
+    "y": {
+      "field": "growth_rate_pct",
+      "type": "quantitative",
+      "scale": {"domain": [-1, 3.5], "nice": false},
+      "axis": {
+        "title": "Annual growth rate (%) — growing →",
+        "grid": true,
+        "gridDash": [2, 2],
+        "domain": false
+      }
+    }
+  },
+
+  "layer": [
+    {
+      "data": {"values": [{"x": 32}]},
+      "mark": {"type": "rule", "color": "#D3D1C7", "strokeWidth": 1},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": null
+      }
+    },
+    {
+      "data": {"values": [{"y": 1.0}]},
+      "mark": {"type": "rule", "color": "#D3D1C7", "strokeWidth": 1},
+      "encoding": {
+        "y": {"field": "y", "type": "quantitative"},
+        "x": null
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"x": 26.5, "y":  3.2, "label": "Young & growing",   "anchor": "left"},
+          {"x": 37.5, "y":  3.2, "label": "Old & growing",     "anchor": "right"},
+          {"x": 26.5, "y": -0.6, "label": "Young & shrinking", "anchor": "left"},
+          {"x": 37.5, "y": -0.6, "label": "Old & shrinking",   "anchor": "right"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#888780",
+        "fontWeight": 400
+      },
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"field": "label"},
+        "align": {"field": "anchor", "type": "nominal", "scale": {"domain": ["left", "right"], "range": ["left", "right"]}}
+      }
+    },
+    {
+      "mark": {"type": "circle", "stroke": "#FFFFFF", "strokeWidth": 1.2, "opacity": 0.85},
+      "encoding": {
+        "color": {
+          "field": "elderly_pct",
+          "type": "quantitative",
+          "scale": {"scheme": "yelloworangebrown", "domain": [5, 12]},
+          "legend": {
+            "title": "% aged 65+",
+            "orient": "right",
+            "direction": "vertical",
+            "gradientLength": 100,
+            "gradientThickness": 10,
+            "format": ".1f",
+            "titleFontSize": 11,
+            "labelFontSize": 10
+          }
+        },
+        "size": {
+          "field": "total_k",
+          "type": "quantitative",
+          "scale": {"range": [80, 1400]},
+          "legend": {
+            "title": "Population (thousands)",
+            "orient": "right",
+            "direction": "vertical",
+            "format": ",.0f",
+            "titleFontSize": 11,
+            "labelFontSize": 10,
+            "symbolStrokeColor": "#888780"
+          }
+        },
+        "tooltip": [
+          {"field": "state",           "type": "nominal",      "title": "State"},
+          {"field": "median_age",      "type": "quantitative", "title": "Median age", "format": ".1f"},
+          {"field": "growth_rate_pct", "type": "quantitative", "title": "Annual growth %", "format": "+.2f"},
+          {"field": "elderly_pct",     "type": "quantitative", "title": "% aged 65+", "format": ".1f"},
+          {"field": "total_k",         "type": "quantitative", "title": "Population (k)", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"window": [{"op": "rank", "as": "rank_pop"}], "sort": [{"field": "total_k", "order": "descending"}]},
+        {"window": [{"op": "rank", "as": "rank_old"}], "sort": [{"field": "median_age", "order": "descending"}]},
+        {"window": [{"op": "rank", "as": "rank_young"}], "sort": [{"field": "median_age", "order": "ascending"}]},
+        {"filter": "datum.rank_pop <= 4 || datum.rank_old <= 2 || datum.rank_young <= 2"}
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 500,
+        "color": "#2C2C2A",
+        "dy": -16
+      },
+      "encoding": {
+        "text": {"field": "state"}
+      }
+    }
+  ],
+
+  "config": {
+    "view": {"stroke": null},
+    "font": "Inter, system-ui, sans-serif"
+  }
+}

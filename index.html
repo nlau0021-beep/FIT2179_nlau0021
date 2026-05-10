@@ -77,6 +77,15 @@
     already running thin.</p>
     <div id="chart-support-ratio" class="chart-container"></div>
   </section>
+
+  <section>
+    <h2>Where each state stands on the demographic clock</h2>
+    <p>Two demographic forces shape a state's future: how old its people are
+    today, and how fast its population is changing. Each state sits in one
+    of four quadrants — and the quadrant tells you what challenges are
+    coming next.</p>
+    <div id="chart-clock" class="chart-container"></div>
+  </section>
 </main>
 
 <footer class="page-footer">
@@ -107,6 +116,9 @@
       .catch(console.error);
 
   vegaEmbed('#chart-support-ratio', 'js/08_support_ratio_dot_strip.json', { actions: false, renderer: 'svg' })
+      .catch(console.error);
+
+  vegaEmbed('#chart-clock', 'js/09_demographic_clock.json', { actions: false, renderer: 'svg' })
       .catch(console.error);
 </script>
 
