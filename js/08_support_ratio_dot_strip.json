@@ -1,0 +1,85 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "How many workers does each elderly Malaysian have to lean on?",
+    "subtitle": "Working-age population (15–64) per person aged 65+, by state, 2025",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#5F5E5A"
+  },
+  "width": "container",
+  "height": 220,
+  "background": "transparent",
+
+  "data": {
+    "url": "data/support_ratio_by_state.csv"
+  },
+
+  "transform": [
+    {"calculate": "min(datum.support_ratio, 17)", "as": "x_clamped"}
+  ],
+
+  "encoding": {
+    "x": {
+      "field": "x_clamped",
+      "type": "quantitative",
+      "scale": {"domain": [5, 17], "nice": false, "clamp": true},
+      "axis": {
+        "title": "Workers (15–64) per elderly person",
+        "grid": true,
+        "gridDash": [2, 2],
+        "domain": false,
+        "tickCount": 7,
+        "values": [5, 7, 9, 11, 13, 15, 17]
+      }
+    },
+    "y": {"value": 110}
+  },
+
+  "layer": [
+    {
+      "mark": {"type": "circle", "size": 280, "stroke": "#FFFFFF", "strokeWidth": 1.5, "opacity": 0.9},
+      "encoding": {
+        "color": {
+          "field": "support_ratio",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "redyellowgreen",
+            "domain": [5, 15]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "state",         "type": "nominal",      "title": "State"},
+          {"field": "support_ratio", "type": "quantitative", "title": "Workers per elderly", "format": ".1f"},
+          {"field": "elderly_pct",   "type": "quantitative", "title": "% aged 65+", "format": ".1f"},
+          {"field": "elderly_k",     "type": "quantitative", "title": "Elderly population (k)", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"window": [{"op": "rank", "as": "rank_low"}],  "sort": [{"field": "support_ratio", "order": "ascending"}]},
+        {"window": [{"op": "rank", "as": "rank_high"}], "sort": [{"field": "support_ratio", "order": "descending"}]},
+        {"filter": "datum.rank_low <= 2 || (datum.rank_high <= 3 && datum.state != 'Putrajaya')"}
+      ],
+      "mark": {"type": "text", "fontSize": 10, "color": "#2C2C2A", "dy": -16, "fontWeight": 500},
+      "encoding": {
+        "text": {"field": "state"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.state == 'Putrajaya'"}],
+      "mark": {"type": "text", "fontSize": 10, "color": "#2C2C2A", "dy": -16, "fontWeight": 500, "align": "right", "dx": -4},
+      "encoding": {
+        "text": {"value": "Putrajaya (off-chart, 31.2)"}
+      }
+    }
+  ],
+
+  "config": {
+    "view": {"stroke": null},
+    "font": "Inter, system-ui, sans-serif"
+  }
+}

@@ -68,6 +68,15 @@
     west-coast pattern has intensified.</p>
     <div id="chart-elderly-multiples" class="chart-container"></div>
   </section>
+
+  <section>
+    <h2>The pressure ahead</h2>
+    <p>Behind every retiree are the working-age adults who pay the taxes,
+    fill the jobs, and provide the care that keeps an ageing society afloat.
+    Some Malaysian states have plenty of workers per retiree; others are
+    already running thin.</p>
+    <div id="chart-support-ratio" class="chart-container"></div>
+  </section>
 </main>
 
 <footer class="page-footer">
@@ -95,6 +104,9 @@
       .catch(console.error);
 
   vegaEmbed('#chart-elderly-multiples', 'js/07_elderly_share_small_multiples.json', { actions: false, renderer: 'svg' })
+      .catch(console.error);
+
+  vegaEmbed('#chart-support-ratio', 'js/08_support_ratio_dot_strip.json', { actions: false, renderer: 'svg' })
       .catch(console.error);
 </script>
 
