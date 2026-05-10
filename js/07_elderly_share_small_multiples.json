@@ -1,0 +1,125 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Within one generation, every state has aged",
+    "subtitle": "Share of population aged 65 or older, by state, 1991 → 2008 → 2025",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#5F5E5A"
+  },
+  "background": "transparent",
+  "config": {
+    "view": {"stroke": null},
+    "font": "Inter, system-ui, sans-serif"
+  },
+
+  "hconcat": [
+    {
+      "title": {"text": "1991", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
+      "width": 240,
+      "height": 220,
+      "projection": {"type": "identity", "reflectY": true},
+      "data": {
+        "url": "data/malaysia_states.geojson",
+        "format": {"type": "json", "property": "features"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.shapeName",
+          "from": {
+            "data": {"url": "data/elderly_share_1991.csv"},
+            "key": "state",
+            "fields": ["elderly_pct", "total_k"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "#FFFFFF", "strokeWidth": 0.6},
+      "encoding": {
+        "color": {
+          "field": "elderly_pct",
+          "type": "quantitative",
+          "scale": {"scheme": "yelloworangebrown", "domain": [3, 12], "clamp": true},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "properties.shapeName", "type": "nominal",      "title": "State"},
+          {"field": "elderly_pct",          "type": "quantitative", "title": "% aged 65+", "format": ".1f"},
+          {"field": "total_k",              "type": "quantitative", "title": "Population (k)", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "title": {"text": "2008", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
+      "width": 240,
+      "height": 220,
+      "projection": {"type": "identity", "reflectY": true},
+      "data": {
+        "url": "data/malaysia_states.geojson",
+        "format": {"type": "json", "property": "features"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.shapeName",
+          "from": {
+            "data": {"url": "data/elderly_share_2008.csv"},
+            "key": "state",
+            "fields": ["elderly_pct", "total_k"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "#FFFFFF", "strokeWidth": 0.6},
+      "encoding": {
+        "color": {
+          "field": "elderly_pct",
+          "type": "quantitative",
+          "scale": {"scheme": "yelloworangebrown", "domain": [3, 12], "clamp": true},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "properties.shapeName", "type": "nominal",      "title": "State"},
+          {"field": "elderly_pct",          "type": "quantitative", "title": "% aged 65+", "format": ".1f"},
+          {"field": "total_k",              "type": "quantitative", "title": "Population (k)", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "title": {"text": "2025", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
+      "width": 240,
+      "height": 220,
+      "projection": {"type": "identity", "reflectY": true},
+      "data": {
+        "url": "data/malaysia_states.geojson",
+        "format": {"type": "json", "property": "features"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.shapeName",
+          "from": {
+            "data": {"url": "data/elderly_share_2025.csv"},
+            "key": "state",
+            "fields": ["elderly_pct", "total_k"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "#FFFFFF", "strokeWidth": 0.6},
+      "encoding": {
+        "color": {
+          "field": "elderly_pct",
+          "type": "quantitative",
+          "scale": {"scheme": "yelloworangebrown", "domain": [3, 12], "clamp": true},
+          "legend": {
+            "title": "% aged 65+",
+            "orient": "bottom",
+            "gradientLength": 200
+          }
+        },
+        "tooltip": [
+          {"field": "properties.shapeName", "type": "nominal",      "title": "State"},
+          {"field": "elderly_pct",          "type": "quantitative", "title": "% aged 65+", "format": ".1f"},
+          {"field": "total_k",              "type": "quantitative", "title": "Population (k)", "format": ",.0f"}
+        ]
+      }
+    }
+  ]
+}

@@ -32,33 +32,42 @@
     <h2>Where the ageing is happening</h2>
     <p>The pressure of an ageing population isn't evenly spread...</p>
     <div id="chart-median-age" class="chart-container"></div>
-</section>
+  </section>
 
-<section>
-  <h2>The shape of the population</h2>
-  <p>Each bar shows how many people are in a 5-year age band. Read it like a tree
-  ring: the bands at the bottom (children) versus those above (older cohorts) tell
-  you how the population is changing over time.</p>
-  <div id="chart-pyramid" class="chart-container"></div>
-</section>
+  <section>
+    <h2>The shape of the population</h2>
+    <p>Each bar shows how many people are in a 5-year age band. Read it like a tree
+    ring: the bands at the bottom (children) versus those above (older cohorts) tell
+    you how the population is changing over time.</p>
+    <div id="chart-pyramid" class="chart-container"></div>
+  </section>
 
-<section>
-  <h2>What an older Malaysia means for our health</h2>
-  <p>As the population ages, the diseases that kill us shift. Today, eight of
-  Malaysia's top ten causes of death are non-communicable — chronic illnesses
-  that build up over decades of life.</p>
-  <div id="chart-top-causes" class="chart-container"></div>
-  <div id="chart-share-deaths" class="chart-container"></div>
-</section>
+  <section>
+    <h2>What an older Malaysia means for our health</h2>
+    <p>As the population ages, the diseases that kill us shift. Today, eight of
+    Malaysia's top ten causes of death are non-communicable — chronic illnesses
+    that build up over decades of life.</p>
+    <div id="chart-top-causes" class="chart-container"></div>
+    <div id="chart-share-deaths" class="chart-container"></div>
+  </section>
 
-<section>
-     <h2>How does Malaysia compare regionally?</h2>
-     <p>The probability that a 30-year-old will die from a major chronic disease before
-     age 70 is a single, powerful measure of how an ageing population fares.
-     Malaysia sits in the middle of the ASEAN pack — making slower progress than
-     Singapore or Thailand, but better than Indonesia or the Philippines.</p>
-     <div id="chart-ncd-asean" class="chart-container"></div>
-   </section>
+  <section>
+      <h2>How does Malaysia compare regionally?</h2>
+      <p>The probability that a 30-year-old will die from a major chronic disease before
+      age 70 is a single, powerful measure of how an ageing population fares.
+      Malaysia sits in the middle of the ASEAN pack — making slower progress than
+      Singapore or Thailand, but better than Indonesia or the Philippines.</p>
+      <div id="chart-ncd-asean" class="chart-container"></div>
+  </section>
+
+  <section>
+    <h2>Watch the ageing wave spread</h2>
+    <p>The same map, three different decades. The colour intensity shows how much
+    of each state's population is aged 65 or older. In 1991, only Penang and Perak
+    had a visibly older population. By 2025, every state has aged — and the
+    west-coast pattern has intensified.</p>
+    <div id="chart-elderly-multiples" class="chart-container"></div>
+  </section>
 </main>
 
 <footer class="page-footer">
@@ -83,6 +92,9 @@
      .catch(console.error);
   
   vegaEmbed('#chart-ncd-asean', 'js/06_ncd_asean.json', { actions: false, renderer: 'svg' })
+      .catch(console.error);
+
+  vegaEmbed('#chart-elderly-multiples', 'js/07_elderly_share_small_multiples.json', { actions: false, renderer: 'svg' })
       .catch(console.error);
 </script>
 
