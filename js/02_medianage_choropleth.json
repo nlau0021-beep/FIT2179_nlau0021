@@ -13,24 +13,22 @@
   "background": "transparent",
   "projection": {"type": "identity", "reflectY": true},
 
-  "data": {
-    "url": "data/malaysia_states.geojson",
-    "format": {"type": "json", "property": "features"}
-  },
-
-  "transform": [
-    {
-      "lookup": "properties.shapeName",
-      "from": {
-        "data": {"url": "data/median_age_by_state.csv"},
-        "key": "state",
-        "fields": ["median_age", "population_k"]
-      }
-    }
-  ],
-
   "layer": [
     {
+      "data": {
+        "url": "data/malaysia_states.geojson",
+        "format": {"type": "json", "property": "features"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.shapeName",
+          "from": {
+            "data": {"url": "data/median_age_by_state.csv"},
+            "key": "state",
+            "fields": ["median_age", "population_k"]
+          }
+        }
+      ],
       "mark": {
         "type": "geoshape",
         "stroke": "#FFFFFF",
@@ -52,13 +50,56 @@
           }
         },
         "tooltip": [
-          {"field": "properties.shapeName", "type": "nominal", "title": "State"},
-          {"field": "median_age", "type": "quantitative", "title": "Median age", "format": ".1f"},
-          {"field": "population_k", "type": "quantitative", "title": "Population", "format": ",.0f"}
+          {"field": "properties.shapeName", "type": "nominal",      "title": "State"},
+          {"field": "median_age",           "type": "quantitative", "title": "Median age", "format": ".1f"},
+          {"field": "population_k",         "type": "quantitative", "title": "Population (thousands)", "format": ",.0f"}
         ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"state": "Perlis",          "lon": 100.20, "lat":  6.50},
+          {"state": "Kedah",           "lon": 100.65, "lat":  5.95},
+          {"state": "Penang",          "lon": 100.30, "lat":  5.42},
+          {"state": "Perak",           "lon": 101.20, "lat":  4.60},
+          {"state": "Kelantan",        "lon": 102.05, "lat":  5.60},
+          {"state": "Terengganu",      "lon": 102.85, "lat":  4.90},
+          {"state": "Pahang",          "lon": 102.65, "lat":  3.80},
+          {"state": "Selangor",        "lon": 101.20, "lat":  3.45},
+          {"state": "Kuala Lumpur",    "lon": 101.85, "lat":  3.05},
+          {"state": "Putrajaya",       "lon": 101.69, "lat":  2.93},
+          {"state": "Negeri Sembilan", "lon": 102.05, "lat":  2.75},
+          {"state": "Malacca",         "lon": 102.30, "lat":  2.20},
+          {"state": "Johor",           "lon": 103.20, "lat":  2.00},
+          {"state": "Sarawak",         "lon": 113.00, "lat":  2.50},
+          {"state": "Sabah",           "lon": 117.00, "lat":  5.40},
+          {"state": "Labuan",          "lon": 115.24, "lat":  5.28}
+        ]
+      },
+      "transform": [
+        {
+          "filter": "indexof(['Perak','Penang','Kuala Lumpur','Selangor','Sabah','Kelantan','Terengganu','Sarawak','Johor'], datum.state) >= 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2C2C2A",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1,
+        "strokeOpacity": 0.85,
+        "paintOrder": "stroke"
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude":  {"field": "lat", "type": "quantitative"},
+        "text":      {"field": "state"}
       }
     }
   ],
+
   "config": {
     "view": {"stroke": null},
     "font": "Inter, system-ui, sans-serif"
