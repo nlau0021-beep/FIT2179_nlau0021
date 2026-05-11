@@ -104,7 +104,7 @@
 
 <script>
   const embedOpts = { actions: false, renderer: 'svg' };
-  vegaEmbed('#chart-population-ethnicity', 'js/01_populationethnicity.json')
+  vegaEmbed('#chart-population-ethnicity', 'js/01_population_ethnicity.json')
     .catch(console.error);
 
   vegaEmbed('#chart-median-age', 'js/02_medianage_choropleth.json', { actions: false, renderer: 'svg' })
@@ -113,25 +113,25 @@
   vegaEmbed('#chart-pyramid', 'js/03_population_pyramid.json', { actions: false, renderer: 'svg' })
   .catch(console.error);
 
-  vegaEmbed('#chart-state-pyramids', 'js/10_state_pyramids.json', { actions: false, renderer: 'svg' })
+  vegaEmbed('#chart-state-pyramids', 'js/04_state_pyramids.json', { actions: false, renderer: 'svg' })
     .catch(console.error);
 
-  vegaEmbed('#chart-top-causes', 'js/04_top_causes.json', { actions: false, renderer: 'svg' })
+  vegaEmbed('#chart-top-causes', 'js/05_top_causes.json', { actions: false, renderer: 'svg' })
      .catch(console.error);
 
-  vegaEmbed('#chart-share-deaths', 'js/05_share_of_deaths_donut.json', { actions: false, renderer: 'svg' })
+  vegaEmbed('#chart-share-deaths', 'js/06_share_of_deaths_donut.json', { actions: false, renderer: 'svg' })
      .catch(console.error);
   
-  vegaEmbed('#chart-ncd-asean', 'js/06_ncd_asean.json', { actions: false, renderer: 'svg' })
+  vegaEmbed('#chart-ncd-asean', 'js/07_ncd_asean.json', { actions: false, renderer: 'svg' })
       .catch(console.error);
 
-  vegaEmbed('#chart-elderly-multiples', 'js/07_elderly_share_small_multiples.json', { actions: false, renderer: 'svg' })
+  vegaEmbed('#chart-elderly-multiples', 'js/08_elderly_share_small_multiples.json', { actions: false, renderer: 'svg' })
       .catch(console.error);
 
-  vegaEmbed('#chart-support-ratio', 'js/08_support_ratio_dot_strip.json', { actions: false, renderer: 'svg' })
+  vegaEmbed('#chart-support-ratio', 'js/09_support_ratio_dot_strip.json', { actions: false, renderer: 'svg' })
       .catch(console.error);
 
-  vegaEmbed('#chart-clock', 'js/09_demographic_clock.json', { actions: false, renderer: 'svg' })
+  vegaEmbed('#chart-clock', 'js/10_demographic_clock.json', { actions: false, renderer: 'svg' })
       .catch(console.error);
 </script>
 
