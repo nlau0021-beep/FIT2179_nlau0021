@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Same country, four different demographic shapes",
+    "subtitle": "Population by age and sex, 2025 — selected states. X-axes independent so shape, not size, is comparable.",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#5F5E5A"
+  },
+  "background": "transparent",
+
+  "data": {
+    "url": "data/state_pyramids.csv"
+  },
+
+  "facet": {
+    "column": {
+      "field": "state",
+      "type": "nominal",
+      "sort": {"field": "state_order", "order": "ascending"},
+      "header": {
+        "title": null,
+        "labelFontSize": 13,
+        "labelFontWeight": 500
+      }
+    }
+  },
+
+  "spec": {
+    "width": 180,
+    "height": 280,
+    "encoding": {
+      "y": {
+        "field": "age",
+        "type": "ordinal",
+        "sort": {"field": "age_order", "order": "descending"},
+        "axis": {
+          "title": null,
+          "labelFontSize": 9,
+          "ticks": false,
+          "domain": false
+        },
+        "scale": {"paddingInner": 0.15}
+      },
+      "x": {
+        "field": "signed_pop",
+        "type": "quantitative",
+        "axis": {
+          "title": "Population (thousands)",
+          "labelExpr": "abs(datum.value)",
+          "grid": true,
+          "gridDash": [2, 2],
+          "domain": false,
+          "labelFontSize": 9,
+          "tickCount": 4
+        }
+      },
+      "color": {
+        "field": "sex",
+        "type": "nominal",
+        "scale": {
+          "domain": ["Male", "Female"],
+          "range":  ["#185FA5", "#D4537E"]
+        },
+        "legend": {
+          "title": null,
+          "orient": "top-right",
+          "labelFontSize": 11
+        }
+      },
+      "tooltip": [
+        {"field": "state",      "type": "nominal",      "title": "State"},
+        {"field": "age",        "type": "ordinal",      "title": "Age group"},
+        {"field": "sex",        "type": "nominal",      "title": "Sex"},
+        {"field": "population", "type": "quantitative", "title": "Population (thousands)", "format": ",.1f"}
+      ]
+    },
+    "mark": {"type": "bar", "cornerRadius": 1}
+  },
+
+  "resolve": {
+    "scale": {"x": "independent"}
+  },
+
+  "config": {
+    "view": {"stroke": null},
+    "font": "Inter, system-ui, sans-serif"
+  }
+}

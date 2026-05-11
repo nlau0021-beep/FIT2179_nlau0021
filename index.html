@@ -42,6 +42,16 @@
     <div id="chart-pyramid" class="chart-container"></div>
   </section>
 
+ <section>
+    <h2>Same country, four different demographic shapes</h2>
+    <p>Zoom in on individual states and the picture becomes more varied.
+    Sabah still looks like a textbook population pyramid — wide at the
+    base, narrowing upward. Perak's pyramid has lost its bottom: fewer
+    children entering each year. Kuala Lumpur bulges in the middle,
+    dominated by working-age migrants drawn to the capital.</p>
+    <div id="chart-state-pyramids" class="chart-container"></div>
+  </section>
+
   <section>
     <h2>What an older Malaysia means for our health</h2>
     <p>As the population ages, the diseases that kill us shift. Today, eight of
@@ -102,6 +112,9 @@
 
   vegaEmbed('#chart-pyramid', 'js/03_population_pyramid.json', { actions: false, renderer: 'svg' })
   .catch(console.error);
+
+  vegaEmbed('#chart-state-pyramids', 'js/10_state_pyramids.json', { actions: false, renderer: 'svg' })
+    .catch(console.error);
 
   vegaEmbed('#chart-top-causes', 'js/04_top_causes.json', { actions: false, renderer: 'svg' })
      .catch(console.error);

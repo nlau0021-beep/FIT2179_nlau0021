@@ -1,0 +1,145 @@
+state,state_order,age,age_order,sex,population,signed_pop,year
+Sabah,0,00-04,0,Male,148.3,-148.3,2025
+Sabah,0,00-04,0,Female,138.9,138.9,2025
+Sabah,0,05-09,1,Male,160.8,-160.8,2025
+Sabah,0,05-09,1,Female,147.8,147.8,2025
+Sabah,0,10-14,2,Male,138.9,-138.9,2025
+Sabah,0,10-14,2,Female,132.8,132.8,2025
+Sabah,0,15-19,3,Male,209.4,-209.4,2025
+Sabah,0,15-19,3,Female,189.3,189.3,2025
+Sabah,0,20-24,4,Male,215.8,-215.8,2025
+Sabah,0,20-24,4,Female,186.8,186.8,2025
+Sabah,0,25-29,5,Male,211.3,-211.3,2025
+Sabah,0,25-29,5,Female,186.9,186.9,2025
+Sabah,0,30-34,6,Male,182.0,-182.0,2025
+Sabah,0,30-34,6,Female,160.8,160.8,2025
+Sabah,0,35-39,7,Male,155.0,-155.0,2025
+Sabah,0,35-39,7,Female,146.7,146.7,2025
+Sabah,0,40-44,8,Male,138.3,-138.3,2025
+Sabah,0,40-44,8,Female,126.5,126.5,2025
+Sabah,0,45-49,9,Male,94.6,-94.6,2025
+Sabah,0,45-49,9,Female,86.9,86.9,2025
+Sabah,0,50-54,10,Male,75.8,-75.8,2025
+Sabah,0,50-54,10,Female,70.9,70.9,2025
+Sabah,0,55-59,11,Male,61.1,-61.1,2025
+Sabah,0,55-59,11,Female,57.7,57.7,2025
+Sabah,0,60-64,12,Male,49.7,-49.7,2025
+Sabah,0,60-64,12,Female,46.8,46.8,2025
+Sabah,0,65-69,13,Male,49.7,-49.7,2025
+Sabah,0,65-69,13,Female,46.3,46.3,2025
+Sabah,0,70-74,14,Male,36.6,-36.6,2025
+Sabah,0,70-74,14,Female,34.6,34.6,2025
+Sabah,0,75-79,15,Male,17.3,-17.3,2025
+Sabah,0,75-79,15,Female,18.5,18.5,2025
+Sabah,0,80-84,16,Male,9.2,-9.2,2025
+Sabah,0,80-84,16,Female,10.7,10.7,2025
+Sabah,0,85+,17,Male,9.0,-9.0,2025
+Sabah,0,85+,17,Female,7.9,7.9,2025
+Selangor,1,00-04,0,Male,258.5,-258.5,2025
+Selangor,1,00-04,0,Female,240.9,240.9,2025
+Selangor,1,05-09,1,Male,265.9,-265.9,2025
+Selangor,1,05-09,1,Female,256.3,256.3,2025
+Selangor,1,10-14,2,Male,260.6,-260.6,2025
+Selangor,1,10-14,2,Female,242.4,242.4,2025
+Selangor,1,15-19,3,Male,250.8,-250.8,2025
+Selangor,1,15-19,3,Female,232.9,232.9,2025
+Selangor,1,20-24,4,Male,360.7,-360.7,2025
+Selangor,1,20-24,4,Female,262.6,262.6,2025
+Selangor,1,25-29,5,Male,365.8,-365.8,2025
+Selangor,1,25-29,5,Female,244.3,244.3,2025
+Selangor,1,30-34,6,Male,341.5,-341.5,2025
+Selangor,1,30-34,6,Female,271.9,271.9,2025
+Selangor,1,35-39,7,Male,376.5,-376.5,2025
+Selangor,1,35-39,7,Female,346.1,346.1,2025
+Selangor,1,40-44,8,Male,346.6,-346.6,2025
+Selangor,1,40-44,8,Female,319.1,319.1,2025
+Selangor,1,45-49,9,Male,265.2,-265.2,2025
+Selangor,1,45-49,9,Female,229.0,229.0,2025
+Selangor,1,50-54,10,Male,220.7,-220.7,2025
+Selangor,1,50-54,10,Female,196.7,196.7,2025
+Selangor,1,55-59,11,Male,178.6,-178.6,2025
+Selangor,1,55-59,11,Female,165.0,165.0,2025
+Selangor,1,60-64,12,Male,149.2,-149.2,2025
+Selangor,1,60-64,12,Female,136.2,136.2,2025
+Selangor,1,65-69,13,Male,117.8,-117.8,2025
+Selangor,1,65-69,13,Female,112.2,112.2,2025
+Selangor,1,70-74,14,Male,92.7,-92.7,2025
+Selangor,1,70-74,14,Female,90.5,90.5,2025
+Selangor,1,75-79,15,Male,55.3,-55.3,2025
+Selangor,1,75-79,15,Female,65.0,65.0,2025
+Selangor,1,80-84,16,Male,24.8,-24.8,2025
+Selangor,1,80-84,16,Female,26.9,26.9,2025
+Selangor,1,85+,17,Male,22.5,-22.5,2025
+Selangor,1,85+,17,Female,15.4,15.4,2025
+Kuala Lumpur,2,00-04,0,Male,52.2,-52.2,2025
+Kuala Lumpur,2,00-04,0,Female,48.4,48.4,2025
+Kuala Lumpur,2,05-09,1,Male,64.0,-64.0,2025
+Kuala Lumpur,2,05-09,1,Female,62.6,62.6,2025
+Kuala Lumpur,2,10-14,2,Male,64.5,-64.5,2025
+Kuala Lumpur,2,10-14,2,Female,57.2,57.2,2025
+Kuala Lumpur,2,15-19,3,Male,74.0,-74.0,2025
+Kuala Lumpur,2,15-19,3,Female,69.0,69.0,2025
+Kuala Lumpur,2,20-24,4,Male,78.6,-78.6,2025
+Kuala Lumpur,2,20-24,4,Female,63.9,63.9,2025
+Kuala Lumpur,2,25-29,5,Male,87.2,-87.2,2025
+Kuala Lumpur,2,25-29,5,Female,59.2,59.2,2025
+Kuala Lumpur,2,30-34,6,Male,116.2,-116.2,2025
+Kuala Lumpur,2,30-34,6,Female,88.8,88.8,2025
+Kuala Lumpur,2,35-39,7,Male,135.7,-135.7,2025
+Kuala Lumpur,2,35-39,7,Female,103.3,103.3,2025
+Kuala Lumpur,2,40-44,8,Male,134.2,-134.2,2025
+Kuala Lumpur,2,40-44,8,Female,109.0,109.0,2025
+Kuala Lumpur,2,45-49,9,Male,96.3,-96.3,2025
+Kuala Lumpur,2,45-49,9,Female,81.6,81.6,2025
+Kuala Lumpur,2,50-54,10,Male,69.0,-69.0,2025
+Kuala Lumpur,2,50-54,10,Female,59.5,59.5,2025
+Kuala Lumpur,2,55-59,11,Male,40.2,-40.2,2025
+Kuala Lumpur,2,55-59,11,Female,39.6,39.6,2025
+Kuala Lumpur,2,60-64,12,Male,36.0,-36.0,2025
+Kuala Lumpur,2,60-64,12,Female,36.6,36.6,2025
+Kuala Lumpur,2,65-69,13,Male,22.1,-22.1,2025
+Kuala Lumpur,2,65-69,13,Female,24.1,24.1,2025
+Kuala Lumpur,2,70-74,14,Male,21.9,-21.9,2025
+Kuala Lumpur,2,70-74,14,Female,23.6,23.6,2025
+Kuala Lumpur,2,75-79,15,Male,14.7,-14.7,2025
+Kuala Lumpur,2,75-79,15,Female,16.1,16.1,2025
+Kuala Lumpur,2,80-84,16,Male,7.2,-7.2,2025
+Kuala Lumpur,2,80-84,16,Female,8.8,8.8,2025
+Kuala Lumpur,2,85+,17,Male,5.8,-5.8,2025
+Kuala Lumpur,2,85+,17,Female,3.4,3.4,2025
+Perak,3,00-04,0,Male,75.1,-75.1,2025
+Perak,3,00-04,0,Female,71.0,71.0,2025
+Perak,3,05-09,1,Male,87.9,-87.9,2025
+Perak,3,05-09,1,Female,83.2,83.2,2025
+Perak,3,10-14,2,Male,109.6,-109.6,2025
+Perak,3,10-14,2,Female,101.2,101.2,2025
+Perak,3,15-19,3,Male,104.3,-104.3,2025
+Perak,3,15-19,3,Female,94.8,94.8,2025
+Perak,3,20-24,4,Male,134.5,-134.5,2025
+Perak,3,20-24,4,Female,108.5,108.5,2025
+Perak,3,25-29,5,Male,133.4,-133.4,2025
+Perak,3,25-29,5,Female,102.1,102.1,2025
+Perak,3,30-34,6,Male,112.1,-112.1,2025
+Perak,3,30-34,6,Female,81.2,81.2,2025
+Perak,3,35-39,7,Male,104.4,-104.4,2025
+Perak,3,35-39,7,Female,83.3,83.3,2025
+Perak,3,40-44,8,Male,100.6,-100.6,2025
+Perak,3,40-44,8,Female,86.2,86.2,2025
+Perak,3,45-49,9,Male,81.8,-81.8,2025
+Perak,3,45-49,9,Female,76.4,76.4,2025
+Perak,3,50-54,10,Male,61.2,-61.2,2025
+Perak,3,50-54,10,Female,66.2,66.2,2025
+Perak,3,55-59,11,Male,57.3,-57.3,2025
+Perak,3,55-59,11,Female,63.4,63.4,2025
+Perak,3,60-64,12,Male,61.6,-61.6,2025
+Perak,3,60-64,12,Female,67.3,67.3,2025
+Perak,3,65-69,13,Male,47.1,-47.1,2025
+Perak,3,65-69,13,Female,53.8,53.8,2025
+Perak,3,70-74,14,Male,36.1,-36.1,2025
+Perak,3,70-74,14,Female,42.4,42.4,2025
+Perak,3,75-79,15,Male,22.8,-22.8,2025
+Perak,3,75-79,15,Female,28.1,28.1,2025
+Perak,3,80-84,16,Male,10.0,-10.0,2025
+Perak,3,80-84,16,Female,12.9,12.9,2025
+Perak,3,85+,17,Male,5.3,-5.3,2025
+Perak,3,85+,17,Female,7.8,7.8,2025
