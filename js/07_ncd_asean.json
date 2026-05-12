@@ -56,14 +56,8 @@
           },
           "legend": null
         },
-        "size": {
-          "condition": {"test": "datum.country == 'Malaysia'", "value": 3.5},
-          "value": 1.5
-        },
-        "opacity": {
-          "condition": {"test": "datum.country == 'Malaysia'", "value": 1.0},
-          "value": 0.45
-        },
+        "size": {"value": 15},
+        "opacity": {"value": 0},
         "tooltip": [
           {"field": "country", "type": "nominal",      "title": "Country"},
           {"field": "year",    "type": "quantitative", "title": "Year",    "format": "d"},
@@ -72,7 +66,25 @@
       }
     },
     {
-      "transform": [{"filter": "datum.year == 2021"}],
+      "description": "Main crisp trend lines",
+      "mark": {"type": "line", "interpolate": "monotone"},
+      "encoding": {
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "size": {
+          "condition": {"test": "datum.country == 'Malaysia'", "value": 3.5},
+          "value": 1.5
+        },
+        "opacity": {
+          "condition": {"test": "datum.country == 'Malaysia'", "value": 1.0},
+          "value": 0.45
+        }
+      }
+    },
+    {
+      "transform": [{"filter": "datum.year == 2021 && datum.country != 'Malaysia'"}],
       "mark": {
         "type": "text",
         "align": "left",
@@ -83,10 +95,23 @@
       },
       "encoding": {
         "text":  {"field": "country"},
-        "color": {
-          "condition": {"test": "datum.country == 'Malaysia'", "value": "#A32D2D"},
-          "value": "#5F5E5A"
-        }
+        "color": {"value": "#5F5E5A"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.year == 2021 && datum.country == 'Malaysia'"}],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 6,
+        "dy": 10,
+        "fontSize": 11,
+        "fontWeight": 500
+      },
+      "encoding": {
+        "text":  {"field": "country"},
+        "color": {"value": "#A32D2D"}
       }
     }
   ],
