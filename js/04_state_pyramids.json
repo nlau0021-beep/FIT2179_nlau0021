@@ -65,7 +65,7 @@
         },
         "legend": {
           "title": null,
-          "orient": "top-right",
+          "orient": "bottom",
           "labelFontSize": 11
         }
       },

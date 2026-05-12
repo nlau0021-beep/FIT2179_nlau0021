@@ -16,6 +16,13 @@
     "url": "data/who_share_of_deaths_by_causes.csv"
   },
 
+  "transform": [
+    {
+      "calculate": "format(datum.percent, '.1f') + '%'",
+      "as": "percent_label"
+    }
+  ],
+
   "encoding": {
     "theta": {
       "field": "percent",
@@ -52,8 +59,8 @@
     {
       "mark": {
         "type": "arc",
-        "innerRadius": 80,
-        "outerRadius": 130,
+        "innerRadius": 90,
+        "outerRadius": 135,
         "stroke": "#FFFFFF",
         "strokeWidth": 2
       },
@@ -67,13 +74,13 @@
     {
       "mark": {
         "type": "text",
-        "radius": 155,
+        "radius": 115,
         "fontSize": 11,
         "fontWeight": 500
       },
       "encoding": {
-        "text": {"field": "percent", "type": "quantitative", "format": ".1f"},
-        "color": {"value": "#2C2C2A"}
+        "text": {"field": "percent_label", "type": "nominal"},
+        "color": {"value": "#FFFFFF"}
       }
     },
     {

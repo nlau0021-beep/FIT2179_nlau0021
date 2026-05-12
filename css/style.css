@@ -1,10 +1,22 @@
-/* ---- Typography & base ---- */
+/* =====================================================================
+   Living Longer, Ageing Faster
+   Stylesheet
+   ===================================================================== */
+
+/* ---- Design tokens ---- */
 :root {
   --color-text:        #2C2C2A;
   --color-text-muted:  #5F5E5A;
   --color-bg:          #FFFFFF;
   --color-rule:        #D3D1C7;
+  --color-accent:      #A32D2D;
+
   --max-width:         900px;
+  --content-width:     900px;
+
+  --gap-sm:            1rem;
+  --gap-md:            2rem;
+  --gap-lg:            4rem;
 }
 
 * { box-sizing: border-box; }
@@ -18,23 +30,30 @@ body {
   padding: 0;
 }
 
-/* ---- Layout ---- */
+/* ---- Page-level layout ---- */
 .page-header,
-main,
 .page-footer {
-  max-width: var(--max-width);
+  max-width: var(--content-width);
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-.page-header  { padding-top: 4rem; padding-bottom: 1rem; }
-main          { padding-bottom: 3rem; }
-.page-footer  { padding-top: 1rem; padding-bottom: 4rem;
-                border-top: 1px solid var(--color-rule);
-                color: var(--color-text-muted);
-                font-size: 0.85rem; }
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+}
 
-section { margin-top: 3rem; }
+.page-header { padding-top: 4rem; padding-bottom: 1rem; }
+
+.page-footer {
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  margin-top: var(--gap-lg);
+  border-top: 1px solid var(--color-rule);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
 
 /* ---- Type scale ---- */
 h1 {
@@ -42,27 +61,107 @@ h1 {
   font-weight: 600;
   line-height: 1.15;
   margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
 }
 h2 {
   font-size: 1.4rem;
   font-weight: 500;
   margin: 0 0 1rem;
+  letter-spacing: -0.005em;
 }
 .standfirst {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--color-text-muted);
   margin: 0;
+  max-width: 60ch;
 }
-p { margin: 0 0 1rem; max-width: 65ch; }
+p { margin: 0 0 1rem; }
 a { color: #185FA5; }
 
-/* ---- Charts ---- */
+/* ---- Section base ---- */
+section {
+  margin-top: var(--gap-lg);
+  display: grid;
+  gap: var(--gap-md);
+}
+
+/* Section variant 1: full-width chart, text above
+   Used for: large standalone charts (line charts, demographic clock,
+   choropleth, etc.) where the chart benefits from the full width.
+   Default for any <section> without a specific modifier class. */
+section .chart-container {
+  width: 100%;
+  min-height: 380px;
+}
+
+/* Section variant 2: text in left column, chart in right column.
+   Used for: sections where the chart is supporting evidence for
+   a narrative beat, not the main star. */
+.section--split {
+  grid-template-columns: 35% 65%;
+  gap: var(--gap-lg);
+}
+
+.section--split .chart-container {
+  overflow-x: auto;
+}
+.section--split > .section-intro { grid-column: 1; }
+.section--split > .chart-container { grid-column: 2; }
+
+/* Section variant 3: two charts side by side.
+   Used for: the "health consequences" section where top-causes and
+   the donut form a pair. */
+.section--paired { gap: var(--gap-sm); }
+.section--paired .chart-row {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--gap-md);
+  align-items: start;
+}
+.section--paired .chart-container {
+  margin: 0;
+  min-height: 360px;
+}
+
+/* Responsive: collapse multi-column sections to single column
+   on narrower screens (tablet / small laptop). */
+@media (max-width: 960px) {
+  .section--split,
+  .section--paired .chart-row {
+    grid-template-columns: 1fr;
+  }
+  .section--split > .section-intro,
+  .section--split > .chart-container {
+    grid-column: 1;
+  }
+}
+
+/* ---- Text + chart alignment ---- */
+section > div,
+.section-intro {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+section > div p,
+.section-intro p,
+section > div h2,
+.section-intro h2 {
+  max-width: 100%;
+}
+
+/* ---- Chart container baseline ---- */
 .chart-container {
   width: 100%;
-  min-height: 400px;
-  margin: 2rem 0;
+  max-width: var(--max-width);
+  margin: 1rem auto;
 }
+
 .vega-embed {
   width: 100%;
   display: block;
 }
+/* ---- Section intro block (used inside .section--split) ---- */
+.section-intro h2 { margin-top: 0; }
+.section-intro p:last-child { margin-bottom: 0; }

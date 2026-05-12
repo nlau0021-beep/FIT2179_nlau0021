@@ -17,7 +17,7 @@
   "hconcat": [
     {
       "title": {"text": "1991", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
-      "width": 240,
+      "width": 280,
       "height": 220,
       "projection": {"type": "identity", "reflectY": true},
       "data": {
@@ -40,7 +40,15 @@
           "field": "elderly_pct",
           "type": "quantitative",
           "scale": {"scheme": "yelloworangebrown", "domain": [3, 12], "clamp": true},
-          "legend": null
+          "legend": {
+            "title": "% aged 65+",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 160,
+            "gradientThickness": 10,
+            "titleFontSize": 11,
+            "labelFontSize": 10
+          }
         },
         "tooltip": [
           {"field": "properties.shapeName", "type": "nominal",      "title": "State"},
@@ -51,7 +59,7 @@
     },
     {
       "title": {"text": "2008", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
-      "width": 240,
+      "width": 280,
       "height": 220,
       "projection": {"type": "identity", "reflectY": true},
       "data": {
@@ -85,7 +93,7 @@
     },
     {
       "title": {"text": "2025", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
-      "width": 240,
+      "width": 280,
       "height": 220,
       "projection": {"type": "identity", "reflectY": true},
       "data": {
@@ -108,11 +116,7 @@
           "field": "elderly_pct",
           "type": "quantitative",
           "scale": {"scheme": "yelloworangebrown", "domain": [3, 12], "clamp": true},
-          "legend": {
-            "title": "% aged 65+",
-            "orient": "bottom",
-            "gradientLength": 200
-          }
+          "legend": null
         },
         "tooltip": [
           {"field": "properties.shapeName", "type": "nominal",      "title": "State"},

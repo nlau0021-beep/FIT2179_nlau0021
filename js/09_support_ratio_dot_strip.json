@@ -38,15 +38,15 @@
   },
 
   "layer": [
-    {
+    { 
       "mark": {"type": "circle", "size": 280, "stroke": "#FFFFFF", "strokeWidth": 1.5, "opacity": 0.9},
       "encoding": {
         "color": {
-          "field": "support_ratio",
+          "field": "x_clamped",
           "type": "quantitative",
           "scale": {
             "scheme": "redyellowgreen",
-            "domain": [5, 15]
+            "domain": [5, 17]
           },
           "legend": null
         },
@@ -60,14 +60,12 @@
     },
     {
       "transform": [
-        {"window": [{"op": "rank", "as": "rank_low"}],  "sort": [{"field": "support_ratio", "order": "ascending"}]},
-        {"window": [{"op": "rank", "as": "rank_high"}], "sort": [{"field": "support_ratio", "order": "descending"}]},
-        {"filter": "datum.rank_low <= 2 || (datum.rank_high <= 3 && datum.state != 'Putrajaya')"}
+        {"filter": "indexof(['Perak', 'Penang', 'Sabah', 'Labuan'], datum.state) >= 0"}
       ],
-      "mark": {"type": "text", "fontSize": 10, "color": "#2C2C2A", "dy": -16, "fontWeight": 500},
+      "mark": {"type": "text", "fontSize": 10, "color": "#2C2C2A", "fontWeight": 500, "dy": -16},
       "encoding": {
         "text": {"field": "state"}
-      }
+      } 
     },
     {
       "transform": [{"filter": "datum.state == 'Putrajaya'"}],
