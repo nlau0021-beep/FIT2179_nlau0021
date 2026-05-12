@@ -44,7 +44,7 @@
       },
       "legend": {
         "title": null,
-        "orient": "bottom"
+        "orient": "right"
       }
     },
     "tooltip": [
@@ -69,31 +69,8 @@
       }
     },
     {
-      "data": {
-        "values": [
-          {"label": "← Male",   "x": -1500, "age": "85+"},
-          {"label": "Female →", "x":  1500, "age": "85+"}
-        ]
-      },    
-      "mark": {
-        "type": "text",
-        "fontSize": 11,
-        "fontWeight": 500,
-        "color": "#5F5E5A",
-        "dy": -22
-      },
-      "encoding": {
-        "x":   {"field": "x",     "type": "quantitative"},
-        "y":   {"field": "age",   "type": "ordinal",
-                "sort": {"field": "age_order", "order": "descending"}},
-        "text": {"field": "label"},
-        "color": null,
-        "tooltip": null
-      }
-    },
-    {
       "data": {"values": [
-        {"x": -1100, "age": "20-24", "label": "Peak male cohort (~1.7M)"},
+        {"x": -1000, "age": "20-24", "label": "Peak male cohort (~1.7M)"},
         {"x": 1400, "age": "20-24", "label": "Peak female cohort (~1.4M)"}
       ]},
       "mark": {
