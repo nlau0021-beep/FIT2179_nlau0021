@@ -90,6 +90,29 @@
         "color": null,
         "tooltip": null
       }
+    },
+    {
+      "data": {"values": [
+        {"x": -1100, "age": "20-24", "label": "Peak male cohort (~1.7M)"},
+        {"x": 1400, "age": "20-24", "label": "Peak female cohort (~1.4M)"}
+      ]},
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "color": "#FFFFFF",
+        "fontWeight": 500,
+        "align": "right",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "x":    {"field": "x",   "type": "quantitative"},
+        "y":    {"field": "age", "type": "ordinal",
+                "sort": {"field": "age_order", "order": "descending"}},
+        "text": {"field": "label"},
+        "color": null,
+        "tooltip": null
+      }
     }
   ],
 

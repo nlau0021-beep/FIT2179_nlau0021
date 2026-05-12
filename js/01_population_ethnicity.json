@@ -79,21 +79,42 @@
       ]
     },
     {
-      "data": {"values": [{"year": 2025, "label": "≈ 35 million"}]},
-      "mark": {
-        "type": "text",
-        "align": "right",
-        "fontSize": 12,
-        "fontWeight": 500,
-        "color": "#2C2C2A",
-        "dx": -6,
-        "dy": -6
-      },
-      "encoding": {
-        "x": {"field": "year", "type": "quantitative"},
-        "y": {"value": 30},
-        "text": {"field": "label"}
-      }
+      "data": {"values": [{"year": 2025}]},
+      "layer": [
+        {
+          "mark": {
+            "type": "rect",
+            "cornerRadius": 3,
+            "fill": "#F0F0F0",
+            "fillOpacity": 0.7,
+            "stroke": "#D3D1C7",
+            "strokeWidth": 0.5,
+            "width": 85,
+            "height": 22,
+            "xOffset": -55,
+            "yOffset": 20
+          },
+          "encoding": {
+            "x": {"field": "year", "type": "quantitative"},
+            "y": {"datum": 34.5}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "text": "≈ 35 million",
+            "fontSize": 12,
+            "fontWeight": 500,
+            "color": "#2C2C2A",
+            "xOffset": -55,
+            "yOffset": 20
+          },
+          "encoding": {
+            "x": {"field": "year", "type": "quantitative"},
+            "y": {"datum": 34.5}
+          }
+        }
+      ]
     }
   ],
   "config": {

@@ -79,6 +79,45 @@
       "encoding": {
         "text": {"field": "rate", "type": "quantitative", "format": ".1f"}
       }
+    },
+    {
+      "data": {"values": [{"x": 130}]},
+      "layer": [
+        {
+          "mark": {
+            "type": "rect",
+            "cornerRadius": 3,
+            "fill": "#F0F0F0",
+            "fillOpacity": 0.8,
+            "stroke": "#D3D1C7",
+            "strokeWidth": 0.5,
+            "width": 155,
+            "height": 24,
+            "xOffset": -150,
+            "yOffset": 130
+          },
+          "encoding": {
+            "x": {"field": "x", "type": "quantitative"},
+            "y": {"value": 70}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "text": "8 of these 10 causes are NCDs",
+            "fontSize": 11,
+            "fontStyle": "italic",
+            "fontWeight": 500,
+            "color": "#A32D2D",
+            "xOffset": -150,
+            "yOffset": 130
+          },
+          "encoding": {
+            "x": {"field": "x", "type": "quantitative"},
+            "y": {"value": 70}
+          }
+        }
+      ]
     }
   ],
 
