@@ -16,7 +16,7 @@
 
   "hconcat": [
     {
-      "title": {"text": "1991", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
+      "title": {"text": "1991", "subtitle": "Perak leads at 6.6%", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
       "width": 280,
       "height": 220,
       "projection": {"type": "identity", "reflectY": true},
@@ -58,7 +58,7 @@
       }
     },
     {
-      "title": {"text": "2008", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
+      "title": {"text": "2008", "subtitle": "Perak leads at 8.9%", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
       "width": 280,
       "height": 220,
       "projection": {"type": "identity", "reflectY": true},
@@ -92,7 +92,7 @@
       }
     },
     {
-      "title": {"text": "2025", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
+      "title": {"text": "2025", "subtitle": "Perak leads at 11.8% — twice 1991's level", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
       "width": 280,
       "height": 220,
       "projection": {"type": "identity", "reflectY": true},
