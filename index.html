@@ -13,8 +13,11 @@
 <body>
 
 <header class="page-header">
-  <h1>Living Longer, Ageing Faster</h1>
-  <p class="standfirst">Malaysia's quiet demographic transition and what it means for our health.</p>
+  <div class="page-header-content">
+    <div style="color: var(--color-heritage); font-weight: bold; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 0.5rem; letter-spacing: 0.1em;">Data Insight Report</div>
+    <h1>Living Longer, Ageing Faster</h1>
+    <p class="standfirst">Malaysia's quiet demographic transition and what it means for our health.</p>
+  </div>
 </header>
 
 <main>
@@ -29,6 +32,8 @@
     </div>
     <div id="chart-population-ethnicity" class="chart-container"></div>
   </section>
+
+  <div class="divider">✦ ✦ ✦</div>
 
   <section class="section--split">
     <div class="section-intro">
@@ -63,6 +68,8 @@
     <div id="chart-state-pyramids" class="chart-container"></div>
   </section>
 
+  <div class="divider">✦ ✦ ✦</div>
+
   <section>
     <div>
       <h2>What an older Malaysia means for our health</h2>
@@ -89,20 +96,20 @@
     <div>
       <h2>How does Malaysia compare regionally?</h2>
       <p>The probability that a 30-year-old will die from a major chronic disease before
-      age 70 is a single, powerful measure of how an ageing population fares.
-      Malaysia sits in the middle of the ASEAN pack — making slower progress than
+      age 70 is a single, powerful measure. Malaysia sits in the middle of the ASEAN pack — making slower progress than
       Singapore or Thailand, but better than Indonesia or the Philippines.</p>
     </div>
     <div id="chart-ncd-asean" class="chart-container"></div>
   </section>
+
+  <div class="divider">✦ ✦ ✦</div>
 
   <section>
     <div>
       <h2>Watch the ageing wave spread</h2>
       <p>The same map, three different decades. The colour intensity shows how much
       of each state's population is aged 65 or older. In 1991, only Penang and Perak
-      had a visibly older population. By 2025, every state has aged — and the
-      west-coast pattern has intensified.</p>
+      had a visibly older population. By 2025, every state has aged.</p>
     </div>
     <div id="chart-elderly-multiples" class="chart-container"></div>
   </section>
@@ -111,8 +118,7 @@
     <div class="section-intro">
       <h2>The pressure ahead</h2>
       <p>Behind every retiree are the working-age adults who pay the taxes,
-      fill the jobs, and provide the care that keeps an ageing society afloat.
-      Some Malaysian states have plenty of workers per retiree; others are
+      fill the jobs, and provide the care. Some Malaysian states have plenty of workers per retiree; others are
       already running thin.</p>
     </div>
     <div id="chart-support-ratio" class="chart-container"></div>
@@ -133,48 +139,26 @@
 
 <footer class="page-footer">
   <p><strong>Author:</strong> Nicholas Lau | 36532819 · FIT2179 · Monash University Malaysia · May 2026</p>
-
   <p><strong>Data sources:</strong></p>
   <ul>
     <li>Population data: <a href="https://open.dosm.gov.my/data-catalogue/population_state">Department of Statistics Malaysia — Population Table: States</a> (CC BY 4.0)</li>
     <li>Health data: <a href="https://data.who.int/countries/458">World Health Organization — Malaysia country page</a> (CC BY-NC-SA 3.0 IGO)</li>
     <li>State boundaries: <a href="https://www.geoboundaries.org/">geoBoundaries Malaysia ADM1</a> (CC BY 4.0)</li>
   </ul>
-
-  <p><strong>Acknowledgement of AI assistance:</strong> Claude (Anthropic) was used during this project for ideation, drafting code, and debugging. All design decisions, data analysis, and final content choices are my own.</p>
 </footer>
 
 <script>
   const embedOpts = { actions: false, renderer: 'svg' };
-  vegaEmbed('#chart-population-ethnicity', 'js/01_population_ethnicity.json', embedOpts)
-    .catch(console.error);
-
-  vegaEmbed('#chart-median-age', 'js/02_medianage_choropleth.json', embedOpts)
-    .catch(console.error);
-
-  vegaEmbed('#chart-pyramid', 'js/03_population_pyramid.json', embedOpts)
-    .catch(console.error);
-
-  vegaEmbed('#chart-state-pyramids', 'js/04_state_pyramids.json', embedOpts)
-    .catch(console.error);
-
-  vegaEmbed('#chart-top-causes', 'js/05_top_causes.json', embedOpts)
-    .catch(console.error);
-
-  vegaEmbed('#chart-share-deaths', 'js/06_share_of_deaths_donut.json', embedOpts)
-    .catch(console.error);
-
-  vegaEmbed('#chart-ncd-asean', 'js/07_ncd_asean.json', embedOpts)
-    .catch(console.error);
-
-  vegaEmbed('#chart-elderly-multiples', 'js/08_elderly_share_small_multiples.json', embedOpts)
-    .catch(console.error);
-
-  vegaEmbed('#chart-support-ratio', 'js/09_support_ratio_dot_strip.json', embedOpts)
-    .catch(console.error);
-
-  vegaEmbed('#chart-clock', 'js/10_demographic_clock.json', embedOpts)
-    .catch(console.error);
+  vegaEmbed('#chart-population-ethnicity', 'js/01_population_ethnicity.json', embedOpts).catch(console.error);
+  vegaEmbed('#chart-median-age', 'js/02_medianage_choropleth.json', embedOpts).catch(console.error);
+  vegaEmbed('#chart-pyramid', 'js/03_population_pyramid.json', embedOpts).catch(console.error);
+  vegaEmbed('#chart-state-pyramids', 'js/04_state_pyramids.json', embedOpts).catch(console.error);
+  vegaEmbed('#chart-top-causes', 'js/05_top_causes.json', embedOpts).catch(console.error);
+  vegaEmbed('#chart-share-deaths', 'js/06_share_of_deaths_donut.json', embedOpts).catch(console.error);
+  vegaEmbed('#chart-ncd-asean', 'js/07_ncd_asean.json', embedOpts).catch(console.error);
+  vegaEmbed('#chart-elderly-multiples', 'js/08_elderly_share_small_multiples.json', embedOpts).catch(console.error);
+  vegaEmbed('#chart-support-ratio', 'js/09_support_ratio_dot_strip.json', embedOpts).catch(console.error);
+  vegaEmbed('#chart-clock', 'js/10_demographic_clock.json', embedOpts).catch(console.error);
 </script>
 
 </body>
