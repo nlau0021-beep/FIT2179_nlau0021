@@ -84,11 +84,11 @@
       ],
       "mark": {
         "type": "text",
-        "fontSize": 11,
+        "fontSize": 10,
         "fontWeight": 700,
-        "color": "#2C2C2A",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 1,
+        "color": "#ffffff",
+        "stroke": "#000000",
+        "strokeWidth": 0.4,
         "strokeOpacity": 0.85,
         "paintOrder": "stroke"
       },
