@@ -9,7 +9,7 @@
     "subtitleColor": "#5F5E5A"
   },
   "width": "container",
-  "height": 460,
+  "height": 320,
   "background": "transparent",
   "projection": {"type": "identity", "reflectY": true},
 

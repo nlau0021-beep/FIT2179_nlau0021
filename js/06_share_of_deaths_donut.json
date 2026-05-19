@@ -9,7 +9,7 @@
     "subtitleColor": "#5F5E5A"
   },
   "width": "container",
-  "height": 360,
+  "height": 300,
   "background": "transparent",
 
   "data": {
@@ -43,7 +43,7 @@
       },
       "legend": {
         "title": null,
-        "orient": "right",
+        "orient": "bottom",
         "labelFontSize": 11,
         "labelLimit": 240
       }
