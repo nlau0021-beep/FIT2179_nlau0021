@@ -8,6 +8,7 @@
     "subtitleFontSize": 12,
     "subtitleColor": "#5F5E5A"
   },
+  "spacing": 50,
   "background": "transparent",
   "config": {
     "view": {"stroke": null},
@@ -17,7 +18,7 @@
   "hconcat": [
     {
       "title": {"text": "1991", "subtitle": "Perak leads at 6.6%", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
-      "width": 300,
+      "width": 260,
       "height": 150,
       "projection": {"type": "identity", "reflectY": true},
       "data": {
@@ -59,7 +60,7 @@
     },
     {
       "title": {"text": "2008", "subtitle": "Perak leads at 8.9%", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
-      "width": 300,
+      "width": 260,
       "height": 150,
       "projection": {"type": "identity", "reflectY": true},
       "data": {
@@ -93,7 +94,7 @@
     },
     {
       "title": {"text": "2025", "subtitle": "Perak leads at 11.8% — twice 1991's level", "fontSize": 14, "fontWeight": 500, "anchor": "middle"},
-      "width": 300,
+      "width": 260,
       "height": 150,
       "projection": {"type": "identity", "reflectY": true},
       "data": {

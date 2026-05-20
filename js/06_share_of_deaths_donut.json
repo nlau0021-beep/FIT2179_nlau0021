@@ -85,7 +85,7 @@
     },
     {
       "data": {"values": [{"big": "65%", "small": "of all deaths in Malaysia are from NCDs"}]},
-      "mark": {"type": "text", "fontSize": 32, "fontWeight": 600, "color": "#A32D2D", "dy": -8},
+      "mark": {"type": "text", "fontSize": 42, "fontWeight": 700, "color": "#A32D2D", "dy": -8},
       "encoding": {
         "text": {"field": "big"},
         "theta": null,
